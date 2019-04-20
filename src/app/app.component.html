@@ -1,21 +1,53 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<mat-toolbar>
+    
+
+
+  <mat-toolbar-row>
+
+  
+<button mat-icon-button ><img class="padding-ico" src="../assets/logo.svg"
+    title="{{xcode}} {{ title }}!" height="35"></button>
+  <span class="toolbar-icon-spacer"></span>
+
+<span>
+  <button mat-icon-button >
+    <mat-icon >search</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+</span>
+
 
 <router-outlet></router-outlet>
+  </mat-toolbar-row>
+  
+</mat-toolbar>
+
+
+<mat-tab-group headerPosition="top" mat-align-tabs="center" class="streched-content">
+  <mat-tab label="First"> 
+    <img src="https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg?auto=compress&cs=tinysrgb&dpr=1&w={{swidth}}" />
+</mat-tab>
+  <mat-tab label="Second"> 
+  <img
+    src="https://images.pexels.com/photos/241544/pexels-photo-241544.jpeg?auto=compress&cs=tinysrgb&dpr=1&w={{swidth}}" />
+</mat-tab>
+  <mat-tab label="Third"> 
+  <img
+    src="https://images.pexels.com/photos/162625/grinder-hitachi-power-tool-flexible-162625.jpeg?auto=compress&cs=tinysrgb&dpr==1&w={{swidth}}" />
+</mat-tab>
+<mat-tab label="Fourth">
+  <img
+    src="https://images.pexels.com/photos/162625/grinder-hitachi-power-tool-flexible-162625.jpeg?auto=compress&cs=tinysrgb&dpr==1&w={{swidth}}" />
+</mat-tab>
+<mat-tab label="Fith">
+  <img
+    src="https://images.pexels.com/photos/162625/grinder-hitachi-power-tool-flexible-162625.jpeg?auto=compress&cs=tinysrgb&dpr==1&w={{swidth}}" />
+</mat-tab>
+</mat-tab-group>
+
+<mat-card>  <app-xcodecontactos></app-xcodecontactos>
+  </mat-card>
