@@ -6,33 +6,25 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { XcodematcompModule } from './xcodematcomp/xcodematcomp.module';
 import { XcodecontactosComponent } from './xcodecontactos/xcodecontactos.component';
-import { MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { XcodemnaviComponent } from './xcodemnavi/xcodemnavi.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { XcodecontentComponent } from './xcodecontent/xcodecontent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     XcodecontactosComponent,
-    XcodemnaviComponent
+    XcodemnaviComponent,
+    XcodecontentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     XcodematcompModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCardModule,
     ReactiveFormsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

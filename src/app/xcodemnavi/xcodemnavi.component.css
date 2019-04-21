@@ -3,6 +3,43 @@
 }
 
 .sidenav {
+  width: 300px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.streched-content{
+    max-width: 100%;
+}
+.padding-icon {
+  padding: 0 14px;
+}
+
+.toolbar-icon-spacer {
+  margin: auto;
+}
+img{
+    max-width: 100%;
+    max-height:100%;
+}
+.mat-toolbar{
+    background: #ffffff;
+}
+.logo-head{
+    margin: auto;
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
   width: 200px;
 }
 

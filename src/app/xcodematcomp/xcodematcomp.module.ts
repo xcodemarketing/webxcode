@@ -8,8 +8,17 @@ import {
   MatTabsModule,
   MatGridListModule,
   MatRippleModule,
-  MatCardModule
+  MatCardModule,
+  MatDialogModule,
+  MatInputModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
 } from '@angular/material';
+import {  } from '@angular/material';
+
 
 @NgModule({
   declarations: [],
@@ -21,7 +30,14 @@ import {
     MatTabsModule,
     MatGridListModule,
     MatRippleModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -30,7 +46,14 @@ import {
     MatTabsModule,
     MatGridListModule,
     MatRippleModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ]
 })
 export class XcodematcompModule { }

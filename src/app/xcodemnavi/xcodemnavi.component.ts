@@ -16,5 +16,8 @@ export class XcodemnaviComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-
+  title = '800';
+  xcode = 'Bienvenidos a';
+  swidth = document.body.offsetWidth;
+  company = 'XCode Marketing';
 }
