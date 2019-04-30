@@ -1,104 +1,125 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>Información de Contacto</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Compañía" formControlName="company">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Nombre" formControlName="firstName">
-            <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
-              Nombre <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Apellido" formControlName="lastName">
-            <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
-              Apellido <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Dirección" formControlName="address"></textarea>
-            <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
-              Dirección <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row" *ngIf="!hasUnitNumber">
-        <div class="col">
-          <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
-            + Agregar Detalles, Apt, Local, Oficicina
+<div class="col-12 bottom-spacer">
+<h2 class="center">Únete a la comunidad</h2>
+
+<p class="center"> Visita nuestras redes sociales y enterate de las últimas tendencias digitales para tu negocio</p>
+
+<div class="center">
+    <button mat-icon-button color="basic" aria-label="Facebook">
+  <mat-icon svgIcon="facebook" aria-hidden="false" aria-label="Facebook"></mat-icon>
+        </button>
+<button mat-icon-button color="basic" aria-label="Instagram">
+ <mat-icon svgIcon="instagram" aria-hidden="false" aria-label="Instagram"></mat-icon>
           </button>
-        </div>
-      </div>
-      <div class="row" *ngIf="hasUnitNumber">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="No. Local, Oficicina" formControlName="address2"></textarea>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="City" formControlName="city">
-            <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
-              City is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-select placeholder="State" formControlName="state">
-              <mat-option *ngFor="let state of states" [value]="state.abbreviation">
-                {{ state.name }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
-              State is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput #postalCode maxlength="8" placeholder="Teléfono" type="tel" formControlName="phone">
-            <mat-hint align="end">{{postalCode.value.length}} / 8</mat-hint>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-radio-group formControlName="shipping">
-            <mat-radio-button value="free">Free Shipping</mat-radio-button>
-            <mat-radio-button value="priority">Priority Shipping</mat-radio-button>
-            <mat-radio-button value="nextday">Next Day Shipping</mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+<button mat-icon-button color="basic" aria-label="LinkedIn">
+<mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="LinkedIn"></mat-icon>
+    </button>
+
+    <button mat-icon-button color="basic" aria-label="Twitter">
+    <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="Twitter"></mat-icon>
+    </button>
+<button mat-icon-button color="basic" aria-label="WhatsApp">
+  <mat-icon svgIcon="whatsapp" aria-hidden="false" aria-label="WhatsApp"></mat-icon>
+</button>
+
+</div></div>
+
+<div class="clearfix"></div>
+<mat-divider></mat-divider>
+<div class="top-spacer">
+<h2 class="center">Contáctanos</h2>
+<div class="col-6">
+<h4> A través de:</h4>
+<button type="button"  aria-label="Toggle sidenav" mat-raised-button> <i class="material-icons">
+  chat
+</i>
+ WhatsApp</button><button type="button" aria-label="Toggle sidenav" mat-raised-button><i class="material-icons">
+  email
+</i> Email</button>
+<button type="button" aria-label="Toggle sidenav" mat-raised-button><i class="material-icons">
+  phone
+</i> Teléfono</button>
+
+<h4>Visitanos en:</h4>
+<address>Parque Industrial Felipillo, Pacora, Ciudad de Panamá</address>
+
+<mat-divider></mat-divider>
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2358.8190120694944!2d-79.30799344692504!3d9.096356458119603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e54abc1d0e921d3%3A0xe4579e5b7c9e650d!2sPH+PLAZA+COMERCIAL+CANAIMA!5e0!3m2!1sen!2spa!4v1561158834210!5m2!1sen!2spa"
+  width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="col-6">
+    <form [formGroup]="contactForm" novalidate (ngSubmit)="onSubmit()">
+      <mat-card class="shipping-card">
+        <mat-card-header>
+          <mat-card-title></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Empresa" formControlName="company">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Nombre" formControlName="firstName">
+                <mat-error *ngIf="contactForm.controls['firstName'].hasError('required')">
+                  Nombre es <strong>Obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Apellido" formControlName="lastName">
+                <mat-error *ngIf="contactForm.controls['lastName'].hasError('required')">
+                  Apellido es <strong>Obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Correo Eléctronico" formControlName="eMail">
+                <mat-error *ngIf="contactForm.controls['eMail'].hasError('required')">
+                  E-mail es <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput #phone maxlength="8" placeholder="Teléfono" type="tel" formControlName="phone">
+                <mat-hint align="end">{{phone.value.length}} / 8</mat-hint>
+                <mat-error *ngIf="contactForm.controls['phone'].hasError('required')">
+                  Teléfono es <strong>Obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          
+          <div class="row" >
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="País" formControlName="countries">
+                <mat-error *ngIf="contactForm.controls['countries'].hasError('required')">
+                  País es <strong>Obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button align="end" mat-raised-button color="primary" type="submit">Solicitar asistencia gratuita</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    
+
+</div>
+</div>

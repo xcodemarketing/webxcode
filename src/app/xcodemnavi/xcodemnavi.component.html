@@ -1,8 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+      [mode]="(isHandset$ | async) ? 'over' : 'push'">
     <mat-nav-list>
       <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
@@ -22,19 +21,21 @@
   <span class="toolbar-icon-spacer"></span>
 
 <span>
-  <button mat-icon-button >
-    <mat-icon >search</mat-icon>
-  </button>
-  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+    <mat-search-bar></mat-search-bar>
+</span>
+<span>
+
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" >
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
 </span>
 
 
-<router-outlet></router-outlet>
   </mat-toolbar-row>
   
 </mat-toolbar>
+<router-outlet></router-outlet>
+
 <app-xcodecontent></app-xcodecontent>
 
   </mat-sidenav-content>

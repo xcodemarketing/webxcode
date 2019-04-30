@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { EmailerService } from '../emailer.service';
 
 @Component({
   selector: 'app-xcodecontactos',
@@ -7,13 +10,14 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./xcodecontactos.component.css']
 })
 export class XcodecontactosComponent {
-  addressForm = this.fb.group({
+  contactForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
-    address: [null, Validators.required],
+    eMail: [null, Validators.required],
     address2: null,
     city: [null, Validators.required],
+    countries: [null, Validators.required],
     state: [null, Validators.required],
     phone: [null, Validators.compose([
       Validators.required, Validators.minLength(7), Validators.maxLength(8)])
@@ -23,7 +27,7 @@ export class XcodecontactosComponent {
 
   hasUnitNumber = false;
 
-  states = [
+  city = [
     {name: 'Alabama', abbreviation: 'AL'},
     {name: 'Alaska', abbreviation: 'AK'},
     {name: 'American Samoa', abbreviation: 'AS'},
@@ -85,9 +89,56 @@ export class XcodecontactosComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+countries  = [
+{name: 'Argentina'},
+{name: 'Bolivia'},
+{name: 'Brazil'},
+{name: 'Chile'},
+{name: 'Colombia'},
+{name: 'Costa Rica'},
+{name: 'Cuba'},
+{name: 'Dominican Republic'},
+{name: 'Ecuador'},
+{name: 'El Salvador'},
+{name: 'French Guiana'},
+{name: 'Guadeloupe'},
+{name: 'Guatemala'},
+{name: 'Haiti'},
+{name: 'Honduras'},
+{name: 'Martinique'},
+{name: 'Mexico'},
+{name: 'Nicaragua'},
+{name: 'Panama'},
+{name: 'Paraguay'},
+{name: 'Peru'},
+{name: 'Puerto Rico'},
+{name: 'Saint Barthélemy'},
+{name: 'Saint Martin'},
+{name: 'Uruguay'},
+{name: 'Venezuela'}];
 
-  onSubmit() {
-    alert('Thanks!');
+
+  constructor(private fb: FormBuilder, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'facebook',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/facebook.svg'));
+    iconRegistry.addSvgIcon(
+      'instagram',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/instagram.svg'));
+    iconRegistry.addSvgIcon(
+      'twitter',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/twitter.svg'));
+    iconRegistry.addSvgIcon(
+      'linkedin',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/linkedin.svg'));
+    iconRegistry.addSvgIcon(
+      'whatsapp',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/whatsapp.svg'));
+
+  }
+
+  onSubmit( event ) {
+    event.enviarEmail();
+
   }
 }

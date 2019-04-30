@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { WebxcodewordService } from './webxcodeword.service';
 
 
 
@@ -13,6 +15,9 @@ export class AppComponent {
   xcode = 'Bienvenidos a';
   swidth = document.body.offsetWidth;
   company = 'XCode Marketing';
+  posts$: Observable<any[]>;
 
+  constructor(private wp: WebxcodewordService) {
+    this.posts$ = this.wp.getPosts();
+  }
 }
-
